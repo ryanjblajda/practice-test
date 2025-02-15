@@ -19,8 +19,7 @@ export class AppComponent implements OnInit {
   //shows a wait or error screen as needed
   loaded = signal<boolean>(false);
   loading = signal<boolean>(true);
-  showLoadProjectDialog = signal<boolean>(false);
-  savedProject = signal<boolean>(false);
+  begin = signal<boolean>(false);
   help = signal<boolean>(false);
 
   //error message texts
@@ -35,11 +34,6 @@ export class AppComponent implements OnInit {
   //loading message texts
   loadingHeader = 'Loading';
   loadingMessage = 'Please wait, the question list is loading...';
-
-  //lets the user know when the scope is ready to download
-  downloadReady = signal<boolean>(false);
-  downloadName = signal<string>('scope.txt');
-  downloadURL = signal<string>('/scope.txt');
 
   //lets us grab the json scope questions as text
   private httpClient: HttpClient;
@@ -57,7 +51,7 @@ export class AppComponent implements OnInit {
 
   getQuestionList():void {
     try {
-      this.httpClient.get('assets/scope_questions.json', {responseType: 'text'}).subscribe(data => {
+      this.httpClient.get('assets/practice_questions.json', {responseType: 'text'}).subscribe(data => {
         //console.log(data);
         try {
           this.questions = JSON.parse(data) as QuestionList;
