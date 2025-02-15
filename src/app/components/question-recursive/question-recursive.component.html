@@ -4,11 +4,4 @@
         <button *ngFor="let i = index; let answer of question.answers" [class.active]="answer.selected" (click)="onAnswerClicked(answer)" (touchstart)="onAnswerClicked(answer)">{{answer.prompt}}</button>
     </div>
     <div>
-    <div *ngFor="let i = index; let answer of question.answers" class="child-question-section">
-        <div *ngIf="question.answers[i].questions != undefined">
-            <div class="child-question-container" *ngIf="question.answers[i].selected && question.answers[i].questions.length != 0">
-                <app-question-recursive *ngFor="let i = index; let child of question.answers[i].questions" [question]="child"></app-question-recursive>
-            </div>
-        </div>
-    </div>
 </div>
