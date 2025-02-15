@@ -15,25 +15,6 @@ export class Question {
 
 export class Answer {
     prompt!:string;
-    scope!:string;
     selected!:boolean;
-    questions:Question[] | Question[] = [];
-}
-
-export class System {
-    questions:QuestionList | QuestionList = new QuestionList;
-    name!:string;
-    description!:string;
-    customDetails:string | string = '';
-}
-
-export class Project {
-    systems:System[] | System[] = [new System()]
-    number!:string;
-    clientname!:string
-    description!: string
-}
-
-export class BrowserData {
-    projects:Project[] | Project[] = []
+    correct:boolean | boolean = false;
 }
