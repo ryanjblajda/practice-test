@@ -5,9 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SectionComponent } from './components/section/section.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ProjectComponent } from './components/project/project.component';
+import { ProjectComponent } from './components/question-list/question-list.component';
 import { FullscreenMessageComponent } from './components/fullscreen-message/fullscreen-message.component';
-import { LoadProjectsDialogComponent } from './components/load-projects-dialog/load-projects-dialog.component';
 import { HelpComponent } from './components/help/help.component';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { HelpComponent } from './components/help/help.component';
     AppComponent,
     ProjectComponent,
     FullscreenMessageComponent,
-    LoadProjectsDialogComponent,
     HelpComponent,
   ],
   imports: [
