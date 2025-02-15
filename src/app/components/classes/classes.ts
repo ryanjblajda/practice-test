@@ -5,6 +5,7 @@ export class QuestionList {
 export class Section {
     name!:string;
     questions: Question[] | Question[] = [];
+    selected:boolean | boolean = false;
 }
 
 export class Question {
