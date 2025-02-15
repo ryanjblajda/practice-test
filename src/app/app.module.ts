@@ -8,6 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProjectComponent } from './components/question-list/question-list.component';
 import { FullscreenMessageComponent } from './components/fullscreen-message/fullscreen-message.component';
 import { HelpComponent } from './components/help/help.component';
+import { QuestionRecursiveComponent } from "./components/question-recursive/question-recursive.component";
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { HelpComponent } from './components/help/help.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SectionComponent, FormsModule, ReactiveFormsModule
-  ],
+    SectionComponent, FormsModule, ReactiveFormsModule,
+    QuestionRecursiveComponent
+],
   providers: [],
   bootstrap: [AppComponent]
 })
