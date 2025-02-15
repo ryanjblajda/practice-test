@@ -95,6 +95,19 @@ app-project {
     flex-direction: column;
 }
 
+.section-selection {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-list {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+}
+
 .download-container {
     background: $footer-background;
     display: flex;
