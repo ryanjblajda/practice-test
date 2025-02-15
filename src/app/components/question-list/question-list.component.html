@@ -1,2 +1,8 @@
 <section class="details project">
+    <section *ngFor="let section of questions.sections">
+        <article>
+            <header>{{section.name}}</header>
+            <app-question-recursive *ngFor="let question of section.questions" [question]="question"></app-question-recursive>
+        </article>
+    </section>
 </section>
