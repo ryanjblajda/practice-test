@@ -3,8 +3,6 @@
 <app-fullscreen-message *ngIf="!loaded()" [header]="errorHeader" [message]="errorMessage"></app-fullscreen-message>
 <app-fullscreen-message *ngIf="loadExistingError()" [header]="loadExistingHeader" [message]="loadExistingProjectMessage"></app-fullscreen-message>
 <app-help *ngIf="help()" (onclose)="help.set(false)"></app-help>
-<!--<app-fullscreen-message *ngIf="errorLoadingBrowserData()" [header]="errorHeader" [message]="browserMessage"></app-fullscreen-message>-->
-<app-load-projects-dialog *ngIf="showLoadProjectDialog()" [data]="browserData" (onprojectselected)="loadProject($event)" (onclose)="closeLoadProject()" (onerror)="onLoadProjectError($event)"></app-load-projects-dialog>
 <section class="container">
   <section class="top-line"></section>
   <header class="header container">
@@ -14,17 +12,17 @@
       <span class="header-name">{{title}}</span>
     </section>
     <section class="header-item right">
-      <!--<button (click)="saveCurrentProject()">Save Project</button>-->
-      <button (click)="loadExistingProject()"><i class="bi bi bi-upload"></i><span>Load Project</span></button>
-      <button (click)="exportCurrentProject()"><i class="bi bi-floppy"></i><span>Save Project</span></button>
     </section>
   </header>
-  <app-project *ngIf="!loading() || loaded()" [project]="project" [questions]="questions"></app-project>
-  <!--<article class="download-container" ">-->
-  <!--</article>-->
+  <section class="section-selection">
+    <h2>Sections</h2>
+    <h1>Please choose the sections you would like to review</h1>
+    <article class="section-list">
+      <button *ngFor="let section of questions.sections">{{section.name}}</button>
+    </article>
+    <button>Begin Practice Quiz</button>
+  </section>
+  <app-question-list *ngIf="(!loading() || loaded()) && begin()"[questions]="questions"></app-question-list>
   <footer *ngIf="loaded()" class="footer">
-    <button *ngIf="downloadReady()" (click)="downloaded()"><a [href]="downloadURL()" [download]="downloadName()" ><i class="bi bi-cloud-download"></i><span>Download Scope</span></a></button>
-    <button (click)="onGenerateScopeClicked()"><i class="bi bi-arrow-clockwise"></i><span>Generate Scope</span></button>
-    <!--<span>Please complete the form, once complete you will be able to generate your scope.</span>-->
   </footer>
 </section>
