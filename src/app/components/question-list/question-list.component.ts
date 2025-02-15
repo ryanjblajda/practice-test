@@ -4,7 +4,7 @@ import { Question, QuestionList} from '../classes/classes';
 import { signal, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-project',
+  selector: 'app-question-list',
   templateUrl: './question-list.component.html',
   styleUrls: ['./question-list.component.scss']
 })
