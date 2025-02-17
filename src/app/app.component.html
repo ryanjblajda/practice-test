@@ -3,7 +3,7 @@
 <app-fullscreen-message *ngIf="!loaded()" [header]="errorHeader" [message]="errorMessage"></app-fullscreen-message>
 <app-help *ngIf="help()" (onclose)="help.set(false)"></app-help>
 <section class="container">
-  <section class="top-line"></section>
+  <section class="top-line primary"></section>
   <header class="header container">
     <section class="header-item left"><button (click)="help.set(true)"><i class="bi bi-info-circle"></i><span>Help</span></button></section>
     <section class="header-item logo">
@@ -19,7 +19,8 @@
     <article class="section-list">
       <button [class.active]="section.selected" *ngFor="let section of allQuestions.sections" (click)="section.selected = !section.selected">{{section.name}}</button>
     </article>
-    <button (click)="beginQuiz()">Begin Practice Quiz</button>
+    <section class="top-line accent"></section>
+    <button class="start" (click)="beginQuiz()">Begin Practice Quiz</button>
   </section>
   <app-question-list *ngIf="(!loading() || loaded()) && begin()"[questions]="questions" (grade)="onGradeQuiz()"></app-question-list>
   <section class="section-selection" *ngIf="complete()">
