@@ -18,7 +18,7 @@
     <h2>Sections</h2>
     <h1>Please choose the sections you would like to review</h1>
     <article class="section-list">
-      <button *ngFor="let section of questions.sections">{{section.name}}</button>
+      <button [class.active]="section.selected" *ngFor="let section of allQuestions.sections" (click)="section.selected = !section.selected">{{section.name}}</button>
     </article>
     <button>Begin Practice Quiz</button>
   </section>
