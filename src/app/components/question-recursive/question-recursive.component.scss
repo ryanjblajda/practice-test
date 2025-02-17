@@ -5,9 +5,8 @@ button {
     border-radius: .2em;
     background-color: $button-background-color;
     color: $button-text-color;
-    padding: .2em;
-    font-size: large;
-    min-height: 2em;
+    padding: 1em;
+    font-size: larger;
 }
 
 button:active {
@@ -27,7 +26,6 @@ button.active {
 .question { 
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 .prompt {
@@ -37,6 +35,7 @@ button.active {
 
 .content {
     display: flex;
+    flex-direction: column;
 }
 
 .content-item {
@@ -49,7 +48,29 @@ button.active {
 }
 
 .answer-section {
-    flex: 1 1 70%;
+    flex: 1 1 80%;
+    order: 1;
+}
+
+.previous {
+    order: 2;
+}
+
+.next {
+    order: 3;
+}
+
+.previous, .next {
+    flex: 0 1 10%;
+
+    button {
+        flex: 1 1 0;
+        background-color: $global-color-secondary;
+    }
+
+    button:active {
+        background-color: $global-color-accent;
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -59,6 +80,18 @@ button.active {
 
     .question {
         text-align: center;
+    }
+
+    .previous {
+        order: 1;
+    }
+
+    .next {
+        order: 3;
+    }
+
+    .answer-section { 
+        order: 2;
     }
 
     .content-item {
@@ -73,21 +106,5 @@ button.active {
         flex: 0 1 20%;
         min-height: 5em;
         padding: 0.5em;
-    }
-
-    .child-question-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        flex-wrap: wrap;
-
-        app-question-recursive {
-            flex: 1 1 30%;
-
-            button {
-                flex: 0 1 30%;
-            }
-        }
     }
 }

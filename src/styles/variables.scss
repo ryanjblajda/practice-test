@@ -1,12 +1,12 @@
 $global-color-primary:  #4A2360;
-$global-color-text:     #7A7A7A;
+$global-color-text:     #FAFAFA;
 $global-color-secondary: #54595F;
 $global-color-tertiary: #2C3639;
 $global-color-tertiary-2: #20292D;
 $global-color-accent:   #9DA538;
 $global-color-19a2fc8b: #000;
-$global-color-3621085d: #FFF;
-$global-color-eee: #EEEEEE;
+$global-color-3621085d: #333;
+$global-color-eee: #222;
 
 $global-typography-primary-font-family: "Poppins";
 $global-typography-primary-font-weight: 600;
@@ -22,8 +22,8 @@ $error-background-text-color: $global-color-eee;
 
 $line-background: $global-color-primary;
 
-$header-text-color: $global-color-secondary;
-$scope-details-text-color: $global-color-tertiary;
+$header-text-color: $global-color-text;
+$scope-details-text-color: $global-color-text;
 $color-text: $global-color-text;
 
 $project-details-text-color: $global-color-eee;
@@ -47,6 +47,6 @@ $button-touched-background-color: $global-color-primary;
 $button-hover-background-color: $global-color-accent;
 $button-selected-background-color: $global-color-primary;
 
-$button-text-color: $global-color-tertiary-2;
-$button-touched-text-color: $global-color-3621085d;
-$button-selected-text-color: $global-color-eee;
+$button-text-color: $global-color-text;
+$button-touched-text-color: $global-color-text;
+$button-selected-text-color: $global-color-text;

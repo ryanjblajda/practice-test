@@ -22,7 +22,18 @@ img {
 
 .top-line {
     min-height: 10px;
-    background: $line-background;
+}
+
+.primary {
+    background: $global-color-primary;
+}
+
+.accent {
+    background: $global-color-accent;
+}
+
+.start {
+    background-color: $global-color-secondary;
 }
 
 .header {

@@ -7,7 +7,7 @@
         <div class="answer-section content-item">
             <button *ngFor="let i = index; let answer of question.answers" [class.active]="answer.selected" (click)="onAnswerClicked(answer)" (touchstart)="onAnswerClicked(answer)">{{answer.prompt}}</button>
         </div>
-        <div class="last  content-item">
+        <div class="next content-item">
             <button (click)="onNextClicked()">{{nextContent}}</button>
         </div>
     </div>
