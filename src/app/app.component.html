@@ -20,7 +20,15 @@
     <article class="section-list">
       <button [class.active]="section.selected" *ngFor="let section of allQuestions.sections" (click)="section.selected = !section.selected">{{section.name}}</button>
     </article>
-    <button>Begin Practice Quiz</button>
+    <button (click)="beginQuiz()">Begin Practice Quiz</button>
+  </section>
+  <app-question-list *ngIf="(!loading() || loaded()) && begin()"[questions]="questions" (grade)="onGradeQuiz()"></app-question-list>
+  <section class="section-selection" *ngIf="complete()">
+    <h2>Quiz Results</h2>
+    <br/>
+    <h3>{{correct()}}/{{total()}} Questions Correct</h3>
+    <br/>
+    <h3>{{correct()/total() * 100 | number: '1.1-1'}}%</h3>
   </section>
   <app-question-list *ngIf="(!loading() || loaded()) && begin()"[questions]="questions"></app-question-list>
   <footer *ngIf="loaded()" class="footer">
