@@ -5,7 +5,7 @@ button {
     border-radius: .2em;
     background-color: $button-background-color;
     color: $button-text-color;
-    padding: .2em;
+    padding: .5em;
     font-size: x-large;
     margin: .2em;
     min-height: 2em;
@@ -25,4 +25,5 @@ button:hover {
 
 button.active {
     background-color: $button-selected-background-color;
+    color: $global-color-eee;
 }

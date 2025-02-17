@@ -1,8 +1,16 @@
 <section class="details project">
-    <section *ngFor="let section of questions.sections">
-        <article>
-            <header>{{section.name}}</header>
-            <app-question-recursive *ngFor="let question of section.questions" [question]="question"></app-question-recursive>
+    <section *ngFor="let section of questions.sections, let s = index">
+        <article *ngIf="s == sectionSelected()">
+            <header><h2>{{section.name}}</h2></header>
+            <app-question-recursive 
+                *ngFor="let question of section.questions, let q = index, let first = first, let last = last" 
+                [question]="question" 
+                [first]="first" 
+                [total]="section.questions.length"
+                [index]="q"
+                [last]="last" [selected]="q == questionSelected()"
+                (next)="onNext()" (previous)="onPrevious()"></app-question-recursive>
+            <section><h2>Section {{s+1}} of {{questions.sections.length}}</h2></section>
         </article>
     </section>
 </section>

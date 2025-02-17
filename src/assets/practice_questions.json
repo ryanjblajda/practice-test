@@ -18,44 +18,6 @@
                     ] 
                 }
             ]
-        },
-        {
-            "name":"Test Section 2",
-            "questions": [
-                { 
-                    "prompt":"Does this question have an answer?", 
-                    "answers": [ 
-                        { 
-                            "prompt":"Yes", 
-                            "correct":true,
-                            "selected":false
-                        },
-                        { 
-                            "prompt":"No", 
-                            "selected":false
-                        }
-                    ] 
-                }
-            ]
-        },
-        {
-            "name":"Test Section 3",
-            "questions": [
-                { 
-                    "prompt":"Does this question have an answer?", 
-                    "answers": [ 
-                        { 
-                            "prompt":"Yes", 
-                            "correct":true,
-                            "selected":false
-                        },
-                        { 
-                            "prompt":"No", 
-                            "selected":false
-                        }
-                    ] 
-                }
-            ]
         }
     ]
 }

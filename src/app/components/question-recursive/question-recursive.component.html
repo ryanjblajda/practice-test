@@ -1,7 +1,15 @@
-<div class="question">
+<div class="question" *ngIf="selected">
     <div class="prompt">{{question.prompt}}</div>
-    <div class="answer-section">
-        <button *ngFor="let i = index; let answer of question.answers" [class.active]="answer.selected" (click)="onAnswerClicked(answer)" (touchstart)="onAnswerClicked(answer)">{{answer.prompt}}</button>
+    <div class="content">
+        <div class="previous content-item">
+            <button *ngIf="!first" (click)="onPreviousClicked()">{{previousContent}}</button>
+        </div>
+        <div class="answer-section content-item">
+            <button *ngFor="let i = index; let answer of question.answers" [class.active]="answer.selected" (click)="onAnswerClicked(answer)" (touchstart)="onAnswerClicked(answer)">{{answer.prompt}}</button>
+        </div>
+        <div class="last  content-item">
+            <button (click)="onNextClicked()">{{nextContent}}</button>
+        </div>
     </div>
-    <div>
+    <section><h3>Question {{index+1}} of {{total}}</h3></section>
 </div>

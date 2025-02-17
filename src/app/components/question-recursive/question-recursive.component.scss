@@ -35,22 +35,33 @@ button.active {
     padding: 0.2em;
 }
 
-.answer-section {
+.content {
+    display: flex;
+}
+
+.content-item {
     display: flex;
     flex-direction: column;
     align-content: flex-start;
     align-items: stretch;
     gap: 0.5em;
     padding: 0.5em 5em 0.5em 5em;
+}
+
+.answer-section {
     flex: 1 1 70%;
 }
 
 @media screen and (min-width: 600px) {
+    .content {
+        flex-direction: row;
+    }
+
     .question {
         text-align: center;
     }
 
-    .answer-section {
+    .content-item {
         flex-direction: row;
         align-content: stretch;
         justify-content: center;

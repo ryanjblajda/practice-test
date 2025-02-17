@@ -1,7 +1,6 @@
 <!-- error container should fill the whole window -->
 <app-fullscreen-message *ngIf="loading()" [header]="loadingHeader" [message]="loadingMessage"></app-fullscreen-message>
 <app-fullscreen-message *ngIf="!loaded()" [header]="errorHeader" [message]="errorMessage"></app-fullscreen-message>
-<app-fullscreen-message *ngIf="loadExistingError()" [header]="loadExistingHeader" [message]="loadExistingProjectMessage"></app-fullscreen-message>
 <app-help *ngIf="help()" (onclose)="help.set(false)"></app-help>
 <section class="container">
   <section class="top-line"></section>
@@ -30,7 +29,6 @@
     <br/>
     <h3>{{correct()/total() * 100 | number: '1.1-1'}}%</h3>
   </section>
-  <app-question-list *ngIf="(!loading() || loaded()) && begin()"[questions]="questions"></app-question-list>
   <footer *ngIf="loaded()" class="footer">
     <button *ngIf="complete()" (click)="restart()">Restart Quiz</button>
   </footer>
