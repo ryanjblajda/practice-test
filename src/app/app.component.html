@@ -14,7 +14,7 @@
     <section class="header-item right">
     </section>
   </header>
-  <section class="section-selection">
+  <section class="section-selection" *ngIf="!begin() && !complete()">
     <h2>Sections</h2>
     <h1>Please choose the sections you would like to review</h1>
     <article class="section-list">
