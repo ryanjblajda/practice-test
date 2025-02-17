@@ -32,5 +32,6 @@
   </section>
   <app-question-list *ngIf="(!loading() || loaded()) && begin()"[questions]="questions"></app-question-list>
   <footer *ngIf="loaded()" class="footer">
+    <button *ngIf="complete()" (click)="restart()">Restart Quiz</button>
   </footer>
 </section>
